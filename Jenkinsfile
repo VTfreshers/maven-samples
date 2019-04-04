@@ -3,35 +3,38 @@ pipeline{
   stages{
         stage ("fetch")
         {
-                steps
-                {
+                  steps
+                  {
                     echo ('fetching the source code')
-                }
+                  }
         }              
         stage ("test")
         {
         parellel
-            stage ('test1')
+          {
+            stage ("test1")
             {
                 steps
                  {
                     echo ('test1')
                  }
             }
-            stage ('test2')
+            stage ("test2")
             {    
                 steps
                  {
                     echo ('test2')
                  }
             }
-        }
-          stage ('deploy')
+          }
+        }  
+          stage ("deploy")
          {
                   steps
                   {
                       echo ('deploying stage')
                   }
          }
-  }
+                    
+      }
 }     
