@@ -1,38 +1,38 @@
 pipeline{
   agent any
   stages{
-        stage ("fetch")
+        stage ('fetch')
         {
                   steps
                   {
-                    echo ('fetching the source code')
+                    echo ("fetching the source code")
                   }
         }              
-        stage ("test")
+        stage ('test')
         {
         parellel
           {
-            stage ("test1")
+            stage ('test:integration')
             {
                 steps
                  {
-                    echo ('test1')
+                    echo ("integration")
                  }
             }
-            stage ("test2")
+            stage ('test:fuctionality')
             {    
                 steps
                  {
-                    echo ('test2')
+                    echo ("functionality")
                  }
             }
           }
         }  
-          stage ("deploy")
+          stage ('deploy')
          {
                   steps
                   {
-                      echo ('deploying stage')
+                      echo ("deploying stage")
                   }
          }
                     
