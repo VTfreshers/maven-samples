@@ -1,23 +1,23 @@
 pipeline{
   agent any
-        stages ("fetch")
+        stage ("fetch")
         {
                 steps
                 {
                     echo ('fetching the source code')
                 }
         }              
-        stage ("test")
+        stages ("test")
         {
         parellel
-            stages ('test1')
+            stage ('test1')
             {
                 steps
                  {
                     echo ('test1')
                  }
             }
-            stages ('test2')
+            stage ('test2')
             {    
                 steps
                  {
