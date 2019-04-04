@@ -1,5 +1,6 @@
 pipeline{
   agent any
+  stages{
         stage ("fetch")
         {
                 steps
@@ -7,7 +8,7 @@ pipeline{
                     echo ('fetching the source code')
                 }
         }              
-        stages ("test")
+        stage ("test")
         {
         parellel
             stage ('test1')
@@ -32,5 +33,5 @@ pipeline{
                       echo ('deploying stage')
                   }
          }
-    
+  }
 }     
