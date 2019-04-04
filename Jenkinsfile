@@ -10,16 +10,22 @@ pipeline{
         stage ("test")
         {
         parellel
+            stages ('test1')
+            {
                 steps
                  {
                     echo ('test1')
                  }
-                 steps
+            }
+            stages ('test2')
+            {    
+                steps
                  {
                     echo ('test2')
                  }
-         }
-         stage ('deploy')
+            }
+        }
+          stage ('deploy')
          {
                   steps
                   {
