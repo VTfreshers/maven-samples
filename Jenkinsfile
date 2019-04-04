@@ -12,14 +12,14 @@ pipeline{
         {
         parellel
           {
-            stage ('test:integration')
+            stage ('Atest:integration')
             {
                 steps
                  {
                     echo ("integration")
                  }
             }
-            stage ('test:fuctionality')
+            stage ('Btest:fuctionality')
             {    
                 steps
                  {
